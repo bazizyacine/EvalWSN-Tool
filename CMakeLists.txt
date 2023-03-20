@@ -1,0 +1,8 @@
+cmake_minimum_required (VERSION 2.8.7)
+project (evalvsn)
+if(UNIX)
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=gnu++0x")
+endif()
+find_package (OpenCV REQUIRED)
+add_executable (./bin/evalvsn ./src/evalvsn.cc ./src/video.cc ./src/frame.cc ./src/dct.cc ./src/quantification.cc ./src/zigzag.cc ./src/priority.cc ./src/rle.cc ./src/static.cc ./src/golomb.cc ./src/bin.cc ./src/hex.cc ./src/trace.cc ./src/evaluate.cc)
+target_link_libraries (./bin/evalvsn ${OpenCV_LIBS})
